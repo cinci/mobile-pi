@@ -1,4 +1,4 @@
-package pi4droid.filter;
+package pi4droid.server.filter;
 
 import org.springframework.stereotype.Component;
 

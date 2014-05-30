@@ -17,7 +17,7 @@
     <!-- Filters -->
     <filter>
         <filter-name>cors</filter-name>
-        <filter-class>pi4droid.filter.CORSFilter</filter-class>
+        <filter-class>pi4droid.server.filter.CORSFilter</filter-class>
     </filter>
 
     <filter-mapping>
