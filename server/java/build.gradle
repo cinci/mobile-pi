@@ -19,10 +19,11 @@ dependencies {
     compile 'log4j:log4j:1.2.17'
 }
 
-task copyToLib(type: Copy) {
-    from configurations.runtime {
-        into "$buildDir/libs/"
-    }
+task createRuntimeEnv(type: Copy) {
+    into "$buildDir/app/"
+
+    from configurations.runtime
+    from "$buildDir/libs/"
 
     from ("${projectDir}/src/main/webapp") {
         into "webapp"
