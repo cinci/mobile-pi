@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GPIO control</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/excite-bike/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <style>
+        h3 {
+            color: blue;
+            border-bottom: 1px solid gray;
+            padding-top:0;
+            margin-top:0;
+        }
+
+        .content {
+            margin-right: auto;
+            margin-left: auto;
+            width: 350px;
+            padding: 2em;
+        }
+
+        .pin-control {
+            border-bottom: 1px solid gray;
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+            font-weight: bold;
+        }
+
+        .pin-name {
+            margin-bottom: 1em;
+            padding: .3em;
+        }
+
+        .pin-state {
+            color: red;
+        }
+
+        .button {
+            font-size: 0.7em;
+        }
+    </style>
+
+    <script>
+        var serverAddress = "http://192.168.0.112:8080"
+
+        $(function() {
+            $(".button").button();
+
+            $.each($(".pin-state"), function() {
+                getPinState($(this).data("pin-number"));
+            })
+        });
+
+        function getPinState(pin) {
+            $.ajax({
+                url: serverAddress + "/get/pin/" + pin,
+                success: function(result) {
+                    $("span[data-pin-number='" + pin + "']").html(result);
+                }
+            });
+        }
+
+        function setPinState(pin, value) {
+            $.ajax({
+                url: serverAddress + "/set/pin/" + pin + "/value/" + value,
+                success: function(result) {
+                    $("span[data-pin-number='" + pin + "']").html(result);
+                }
+            });
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="content">
+    <h3>Test page for GPIO remote control</h3>
+
+    <div class="pin-control">
+        <div class="pin-name ui-state-highlight ui-corner-all">PIN 1 - state: <span class="pin-state" data-pin-number="1"></span></div>
+        <button onclick="setPinState(1, 1);" class="button">ON</button>
+        <button onclick="setPinState(1, 0);" onclick="getPinState(1);" class="button">OFF</button>
+    </div>
+
+    <div class="pin-control">
+        <div class="pin-name ui-state-highlight ui-corner-all">PIN 2 - state: <span class="pin-state" data-pin-number="2"></span></div>
+        <button onclick="setPinState(2, 1);" class="button">ON</button>
+        <button onclick="setPinState(2, 0);" onclick="getPinState(1);" class="button">OFF</button>
+    </div>
+</div>
+
+</body>
+</html>
