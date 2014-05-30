@@ -28,3 +28,7 @@ task copyToLib(type: Copy) {
         into "webapp"
     }
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "1.12"
+}
