@@ -1,6 +1,5 @@
 package pi4droid.server.runner;
 
-import com.pi4j.io.gpio.GpioFactory;
 import org.mortbay.jetty.Connector;
 import org.mortbay.jetty.Server;
 import org.mortbay.jetty.bio.SocketConnector;
@@ -10,7 +9,7 @@ import java.lang.management.ManagementFactory;
 
 /**
  * Starts an embedded Jetty web server
- *
+ * <p>
  * Created by jc on 14. 5. 2014.
  */
 public class JettyPiRunner {
@@ -39,8 +38,6 @@ public class JettyPiRunner {
             while (System.in.available() == 0) {
                 Thread.sleep(5000);
             }
-
-            GpioFactory.getInstance().shutdown();
 
             server.stop();
             server.join();
