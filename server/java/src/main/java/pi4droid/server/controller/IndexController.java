@@ -14,6 +14,6 @@ public class IndexController extends AbstractController {
     @RequestMapping(value = {"/", "/index"})
     public String index() {
 
-        return "GPIO controller - use get/set methods";
+        return "GPIO controller - use /static/index.html for example";
     }
 }
