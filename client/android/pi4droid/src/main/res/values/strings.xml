@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pi4droid</string>
+    <string name="action_settings">Settings</string>
+    <string name="pin0">PIN 0</string>
+    <string name="pin1">PIN 1</string>
+    <string name="pin2">PIN 2</string>
+    <string name="pin3">PIN 3</string>
+    <string name="pin4">PIN 4</string>
+    <string name="pin5">PIN 5</string>
+    <string name="pin6">PIN 6</string>
+    <string name="pin7">PIN 7</string>
+    <string name="gpioState">GPIO State</string>
+
+</resources>

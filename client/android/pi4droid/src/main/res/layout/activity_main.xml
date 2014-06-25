@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="pi4droid.client.app.GpioActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/gpioState"
+            android:id="@+id/gpioStateText" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+            android:paddingBottom="20dp"/>
+
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin0"
+            android:id="@+id/switch0"
+            android:layout_below="@+id/gpioStateText" android:layout_centerHorizontal="true"/>
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin1"
+            android:id="@+id/switch1" android:layout_below="@+id/switch0" android:layout_centerHorizontal="true"/>
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin2"
+            android:id="@+id/switch2" android:layout_below="@+id/switch1" android:layout_centerHorizontal="true"/>
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin3"
+            android:id="@+id/switch3" android:layout_below="@+id/switch2" android:layout_centerHorizontal="true"/>
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin4"
+            android:id="@+id/switch4" android:layout_below="@+id/switch3" android:layout_centerHorizontal="true"/>
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin5"
+            android:id="@+id/switch5" android:layout_below="@+id/switch4" android:layout_centerHorizontal="true"/>
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin6"
+            android:id="@+id/switch6" android:layout_below="@+id/switch5" android:layout_centerHorizontal="true"/>
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pin7"
+            android:id="@+id/switch7" android:layout_below="@+id/switch6" android:layout_alignLeft="@+id/switch6"/>
+
+</RelativeLayout>
