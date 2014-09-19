@@ -1,4 +1,4 @@
-package pi4droid.server.service;
+package pi4droid.server.util;
 
 import com.pi4j.io.gpio.Pin;
 import com.pi4j.io.gpio.PinState;

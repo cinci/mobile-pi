@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by jc on 14. 5. 2014.
  */
 @RestController
-public class IndexController extends AbstractController {
+public class IndexController {
 
     @RequestMapping(value = {"/", "/index"})
     public String index() {

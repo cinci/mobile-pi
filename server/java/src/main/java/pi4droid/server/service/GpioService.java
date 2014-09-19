@@ -1,42 +1,16 @@
 package pi4droid.server.service;
 
-import com.pi4j.io.gpio.*;
-import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.pi4j.io.gpio.Pin;
+import com.pi4j.io.gpio.PinState;
 
 /**
- * GPIO service
+ * Interface for GPIO service
  * <p>
- * Created by jc on 28. 5. 2014.
+ * Created by jc on 18. 9. 2014.
  */
-@Service
-public class GpioService {
+public interface GpioService {
 
-    private static final Map<Pin, GpioPinDigitalOutput> outputPinCache = new HashMap<>();
+    public void setPinValue(Pin pin, PinState pinState);
 
-    private static final GpioController GPIO_CONTROLLER = GpioFactory.getInstance();
-
-    public void setPinValue(Pin pin, PinState pinState) {
-        GpioPinDigitalOutput outputPin = getOutputPin(pin);
-        outputPin.setState(pinState);
-    }
-
-    public PinState getPinValue(Pin pin) {
-        GpioPinDigitalOutput outputPin = getOutputPin(pin);
-        return outputPin.getState();
-    }
-
-    private GpioPinDigitalOutput getOutputPin(Pin pin) {
-        if (outputPinCache.containsKey(pin)) {
-            return outputPinCache.get(pin);
-        }
-        else {
-            final GpioPinDigitalOutput pinConnector = GPIO_CONTROLLER.provisionDigitalOutputPin(pin);
-            outputPinCache.put(pin, pinConnector);
-
-            return pinConnector;
-        }
-    }
+    public PinState getPinValue(Pin pin);
 }
