@@ -14,6 +14,6 @@ public class IndexController {
     @RequestMapping(value = {"/", "/index"})
     public String index() {
 
-        return "GPIO controller - use /static/index.html for example";
+        return "GPIO controller - use /control.html for example";
     }
 }
