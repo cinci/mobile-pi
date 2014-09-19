@@ -20,7 +20,7 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(Application.class);
-        app.setAdditionalProfiles(PROFILE_DEV);
+        app.setAdditionalProfiles(PROFILE_PI);
         app.run(args);
     }
 }
