@@ -1,9 +1,10 @@
-package pi4droid.client.app;
+package pi4droid.client.app.activity.gpio;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import pi4droid.client.app.R;
 
 /**
  * Main activity

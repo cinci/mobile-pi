@@ -1,6 +1,7 @@
-package pi4droid.client.app;
+package pi4droid.client.app.listener;
 
 import android.widget.CompoundButton;
+import pi4droid.client.app.activity.gpio.GpioPresenter;
 
 /**
  * Switch change listener
